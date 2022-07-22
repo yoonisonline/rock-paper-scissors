@@ -10,10 +10,17 @@
     
 <script>
 
-  
+
+
+function getComputerChoice() {
+    let choices = ["rock", "paper", "scissors"]
+    let random = Math.floor(Math.random() * choices.length);
+
+    return (random, choices[random]); 
 }
 
-
+let result = getComputerChoice();
+console.log(result);
 
 </script>
 
