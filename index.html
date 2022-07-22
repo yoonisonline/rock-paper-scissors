@@ -9,18 +9,49 @@
 <body>
     
 <script>
+    function getComputerChoice() {
+        const choices = ["rock", "paper", "scissors"]
+        const random = Math.floor(Math.random() * choices.length);
 
+        return (random, choices[random]); 
+    }
 
+    function playRound(playerSelection, computerSelection) {
 
-function getComputerChoice() {
-    let choices = ["rock", "paper", "scissors"]
-    let random = Math.floor(Math.random() * choices.length);
-
-    return (random, choices[random]); 
+    if (playerSelection == "rock" && computerSelection == "scissors") {
+        return "You win! Rock beats scissors!"
+    } else if (playerSelection == "paper" && computerSelection == "rock") {
+        return "You win! Paper beats scissors!"
+    } else if (playerSelection == "scissors" && computerSelection == "paper") {
+        return "You win! Scissors beats paper!"
+    } else if (computerSelection == "scissors" && playerSelection == "paper") {
+        return "You lose! Scissors beats paper!" 
+    } else if (computerSelection == "paper" && playerSelection == "rock") {
+        return "You lose! Paper beats rock"
+    } else if (computerSelection == "rock" && playerSelection == "scissors") {
+        return "You lose! Rock beats scissors!"
+    } else {
+        return "It's a tie!"
+    }
+ 
 }
 
-let result = getComputerChoice();
-console.log(result);
+    let playerSelectionInitial = "ROCK";  
+    let playerSelection = playerSelectionInitial.toLowerCase();
+    computerSelection = getComputerChoice(); 
+    console.log(playRound(playerSelection, computerSelection));  
+
+
+
+// function getComputerChoice() {
+//     let choices = ["rock", "paper", "scissors"]
+//     let random = Math.floor(Math.random() * choices.length);
+
+//     return (random, choices[random]); 
+// }
+
+// let result = getComputerChoice();
+// console.log(result);
 
 </script>
 
